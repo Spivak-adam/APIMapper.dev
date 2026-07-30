@@ -132,6 +132,7 @@ router.post(
       email
     } = req.body;
 
+    
     return res.status(201).json({
       id: "generated-id",
       firstName,
