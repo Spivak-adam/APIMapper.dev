@@ -20,9 +20,9 @@ function ResponseSchema({
   return (
     <div className="response-schema">
       <div className="schema-row">
-        <code>{schema.name}</code>
+        <code>{schema.name}: </code>
 
-        <span>{schema.type}</span>
+        <span>{schema.type} </span>
 
         {schema.nullable && (
           <small>nullable</small>
@@ -32,6 +32,7 @@ function ResponseSchema({
       {schema.properties &&
         schema.properties.length > 0 && (
           <div className="nested-schema">
+            
             {schema.properties.map(
               (property, index) => (
                 <ResponseSchema
@@ -39,7 +40,7 @@ function ResponseSchema({
                   schema={property}
                 />
               ),
-            )}
+            )} 
           </div>
         )}
 
@@ -193,11 +194,11 @@ export function EndpointDetails({
                 >
                   <div className="response-heading">
                     <strong>
-                      {response.status}
+                      {response.status} &nbsp;
                     </strong>
 
                     <span>
-                      {response.method}
+                      {response.method} &nbsp;
                     </span>
                   </div>
 
@@ -205,13 +206,13 @@ export function EndpointDetails({
                     <ResponseSchema
                       schema={
                         response.schema
-                      }
-                    />
+                      } 
+                    /> 
                   ) : (
                     <p className="muted">
                       No response schema
-                      detected.
-                    </p>
+                      detected. &nbsp;
+                    </p> 
                   )}
                 </li>
               ),
@@ -235,13 +236,13 @@ export function EndpointDetails({
                   key={`${middleware.name}-${index}`}
                 >
                   <code>
-                    {middleware.name}
+                    {middleware.name} &nbsp;
                   </code>
 
                   <span>
                     {
                       middleware.expression
-                    }
+                    } 
                   </span>
                 </li>
               ),
@@ -267,7 +268,7 @@ export function EndpointDetails({
                 >
                   <div>
                     <strong>
-                      {operation.operation}
+                      {operation.operation} &nbsp;
                     </strong>
 
                     <span>
